@@ -18,13 +18,18 @@
 
 ## 📌 Overview
 
-Identify · Partition · Carve · Hash · Strings · Report ║
+ORaptor is a disk-image forensics tool for RAW, E01-header, VMDK, VDI and QCOW2 images. It identifies image types, parses MBR/GPT partitions, hashes evidence, carves files by signature, extracts strings and builds a timeline while preserving chain of custody. It is intended for authorised forensic use only.
 
 ---
 
 ## ✨ Features
 
-- Disk image analysis and forensics — carve, partitions, hash, entropy
+- Identifies RAW, E01-header, VMDK, VDI and QCOW2 disk images
+- MBR/GPT partition parsing
+- Evidence hashing for chain-of-custody preservation
+- Signature-based file carving with configurable scan size
+- String extraction and entropy/slack scanning
+- Full analysis pipeline with report generation
 
 ---
 
@@ -38,7 +43,10 @@ Identify · Partition · Carve · Hash · Strings · Report ║
 ## 🚀 Usage
 
 ```bash
-./ORaptor
+./ORaptor -i disk.raw --identify --partitions
+./ORaptor -i disk.e01 --carve --scan-mb 512 -o ./out
+./ORaptor -i disk.vmdk --full
+./ORaptor --help
 ```
 
 ---
